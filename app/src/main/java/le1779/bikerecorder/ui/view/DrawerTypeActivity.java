@@ -1,4 +1,4 @@
-package le1779.bikerecorder;
+package le1779.bikerecorder.ui.view;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,13 +13,22 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import le1779.bikerecorder.R;
+import le1779.bikerecorder.presenter.DrawerTypePresenter;
+import le1779.bikerecorder.presenter.contract.DrawerTypeContract;
+
 public class DrawerTypeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, DrawerTypeContract.View {
+
+    DrawerTypePresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer_type);
+
+        presenter = new DrawerTypePresenter(this);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
