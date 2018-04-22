@@ -38,6 +38,7 @@ public class LocationUtils implements LocationListener {
                             LOCATION_UPDATE_MIN_TIME, LOCATION_UPDATE_MIN_DISTANCE, this);
                     location = mLocationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
                 }
+                
                 if (isGPSEnabled) {
                     mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,
                             LOCATION_UPDATE_MIN_TIME, LOCATION_UPDATE_MIN_DISTANCE, this);
